@@ -119,3 +119,121 @@ public class Carro
     }
 
 }
+
+public class Conta
+{
+    public int numero { get; set; }
+    public string nome { get; set; }
+    public double saldo { get; set; }
+
+    public Conta(int numero, string nome, double saldo = 0)
+    {
+        this.numero = numero;
+        this.nome = nome;
+        this.saldo = saldo;
+    }
+
+    public void Deposito(double valor)
+    {
+        this.saldo += valor;
+    }
+
+    public void Saque(double valor)
+    {
+        this.saldo -= valor;
+    }
+
+    public void changeName(string nome)
+    {
+        this.nome = nome;
+    }
+}
+
+public class Retangulo
+{
+    public double a { get; set; }
+    public double b { get; set; }
+
+    public Retangulo(double a, double b)
+    {
+        this.a = a;
+        this.b = b;
+    }
+
+    public double Area()
+    {
+        return (this.a * this.b);
+    }
+
+    public double Perimetro()
+    {
+        return (this.a + this.b);
+    }
+}
+
+public class Funcionario
+{
+    public string nome { get; set; }
+    public string cpf { get; set; }
+    public double salario { get; set; }
+    public int faltas { get; set; } = 0;
+    public Funcionario(string nome, string cpf, double salario)
+    {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.salario = salario;
+    }
+
+    public double GetBonificacao()
+    {
+        return this.salario;
+    }
+    
+    public void AumetarSalario(int incremento)
+    {
+        this.salario = this.salario * ((incremento / 10) + 1);
+    }
+
+    public void Faltou()
+    {
+        this.faltas++;
+    }
+
+    public int GetFaltas()
+    {
+        return faltas;
+    }
+}
+
+public static class Calculadora
+{
+    public static double Soma(double a, double b)
+    {
+        return a + b;
+    }
+
+    public static double Subtracao(double a, double b)
+    {
+        return a - b;
+    }
+
+    public static double Multiplicacao(double a, double b)
+    {
+        return a * b;
+    }
+
+    public static double Divisao(double a, double b)
+    {
+        return a / b;
+    }
+
+    public static double Potenciacao(double a, double b)
+    {
+        return Math.Pow(a, b);
+    }
+
+    public static double Radiciacao(double a, double b)
+    {
+        return Math.Pow(a, 1.0 / b);
+    }
+}
